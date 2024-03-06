@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var person = {
+        name: "Sachin",
+        greet: function (theGreeting) {
+          console.log(theGreeting + " " + this.name);
+        },
+      };
+      person.greet("Hello");
+      var anotherPerson = { name: "Virat" };
+      person.greet.call(anotherPerson, "Hey"); // invokes greet on anotherPerson as the context
+      person.greet.apply(anotherPerson, ["Hi"]);
+
+      // bind -> returns a greet function binded with anotherPerson as context
+
+      var bindedGreetFunction = person.greet.bind(anotherPerson);
+      // after 100 lines of code / as after click
+      bindedGreetFunction("Hola");
+      //   function Shape() {
+      //     this.length = 10;
+      //     this.breadth = 10;
+      //   }
+
+      //   function Rect() {
+      //     Shape.call(this);
+      //     this.isSquare = false;
+      //   }
+
+      //   new Rect();
+    </script>
+  </head>
+  <body></body>
+</html>

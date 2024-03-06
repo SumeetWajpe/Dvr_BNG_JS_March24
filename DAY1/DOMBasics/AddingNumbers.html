@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function AddHandler() {
+        //get values fomr textboxes & parse them as number
+        var firstNum = parseInt(document.getElementById("txtNumberOne").value);
+        var secondNum = parseInt(document.getElementById("txtNumberTwo").value);
+        // add the numbers
+        var result = firstNum + secondNum;
+        // access the paragraph
+        var pResult = document.getElementById("result");
+
+        // set result as inner text of paragraph
+        // pResult.innerText = "<strong>Result : " + result + "</strong>";
+        pResult.innerHTML = "<strong>Result : " + result + "</strong>";
+        pResult.setAttribute("style", "color:green");
+      }
+    </script>
+  </head>
+  <body>
+    Number 1 :
+    <input type="text" id="txtNumberOne" />
+    <br />
+    Number 2 :
+    <input type="text" id="txtNumberTwo" />
+    <button id="btnClick" onclick="AddHandler()">Add</button>
+
+    <p id="result">Result :</p>
+  </body>
+</html>

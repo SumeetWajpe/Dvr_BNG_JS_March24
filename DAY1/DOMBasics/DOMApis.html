@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function Initialize() {
+        var allPs = document.getElementsByTagName("p");
+        // console.log(allPs.length);
+        for (let index = 0; index < allPs.length; index++) {
+          console.log(allPs[index].innerText);
+          allPs[index].innerText = "Dynamic text " + index;
+        }
+      }
+    </script>
+  </head>
+  <body onload="Initialize()">
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+  </body>
+</html>

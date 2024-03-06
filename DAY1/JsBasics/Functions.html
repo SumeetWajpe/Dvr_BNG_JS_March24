@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 1. Function declaration syntax
+
+      //   function Add(x, y) {
+      //     return x + y;
+      //   }
+      //   var result = Add(10, 20);
+      //   console.log(result);
+
+      // 2. Function as an expression
+
+      //   var Add = function (x, y) {
+      //     return x + y;
+      //   };
+      //   var result = Add(10, 20);
+      //   console.log(result);
+
+      // 3. Using Function Object
+      var Add = new Function("x", "y", "return x + y");
+      var result = Add(20, 20);
+      console.log(result);
+
+      // Nested Functions
+
+      //   function Outer() {
+      //     console.log("Outer");
+      //     var innerMsg = "Inner !";
+      //     function Inner() {
+      //       console.log(innerMsg);
+      //     }
+      //     Inner();
+      //   }
+      //   Outer();
+
+      // Function returning a function
+
+      function Outer() {
+        console.log("Outer");
+        var innerMsg = "inner";
+        return function () {
+          console.log(innerMsg);
+        };
+      }
+      var Inner = Outer();
+      Inner();
+
+      // use case
+
+      function Counter() {
+        var count = 0; // closure variable
+        return function () {
+          console.log(count++);
+        };
+      }
+
+      var MyCounter = Counter();
+      MyCounter();
+      MyCounter();
+      MyCounter();
+      MyCounter();
+      MyCounter();
+      MyCounter();
+    </script>
+  </head>
+  <body></body>
+</html>

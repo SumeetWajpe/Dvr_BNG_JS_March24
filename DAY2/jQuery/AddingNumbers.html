@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#btnClick").click(function () {
+          var result =
+            parseInt($("#txtNumberOne").val()) +
+            parseInt($("#txtNumberTwo").val());
+          $("#result")
+            .html($("<strong/>").html("Result : " + result))
+            .css("color", "green");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    Number 1 :
+    <input type="text" id="txtNumberOne" />
+    <br />
+    Number 2 :
+    <input type="text" id="txtNumberTwo" />
+    <button id="btnClick">Add</button>
+
+    <p id="result">Result :</p>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script>
+      function AddItem() {
+        var newBeverage = document.getElementById("txtBeverage").value; // get textbox value (new beverage)
+        var deleteButton = document.createElement("button"); //create a delete button
+        deleteButton.innerText = "X"; // text for button
+        deleteButton.setAttribute("class", "btn btn-danger btn-sm");
+        deleteButton.onclick = DeleteItem.bind(event); // dynamic event handler association
+        var newLi = document.createElement("li"); // create a new List Item
+        newLi.innerText = newBeverage; // set newBeverage as innerText
+        newLi.id = newBeverage;
+        newLi.setAttribute("class", "list-group-item");
+        newLi.appendChild(deleteButton); // add deleteButton as child of newly created li
+        var listOfBeverages = document.getElementById("listOfBeverages"); // get the list (ul)
+        listOfBeverages.appendChild(newLi); // add newLi (with button) as child of ul
+      }
+
+      function DeleteItem(e) {
+        console.log(e.target);
+        var idToBeDeleted = e.target.parentNode.id;
+        console.log(idToBeDeleted);
+        var itemToBeDeleted = document.getElementById(idToBeDeleted);
+        itemToBeDeleted.remove();
+      }
+    </script>
+  </head>
+  <body class="container">
+    <label>
+      Enter Beverage :
+      <input type="text" id="txtBeverage" />
+    </label>
+    <button onclick="AddItem()" class="btn btn-success">
+      Add A Food Item
+      <i class="fa-solid fa-square-plus"></i>
+    </button>
+    <ul id="listOfBeverages" class="list-group"></ul>
+  </body>
+</html>

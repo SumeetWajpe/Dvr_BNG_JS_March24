@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      class Car {
+        // Default arguments
+        constructor(name = "", speed = 0) {
+          this.name = name;
+          this.speed = speed;
+        }
+        accelerate() {
+          // return (
+          //   "The car " + this.name + " is running @ " + this.speed + " kmph !"
+          // );
+          return `The car ${this.name} is running @ ${this.speed} kmph !`;
+        }
+      }
+      //   var carObj = new Car("AUDI", 300);
+      //   carObj.accelerate();
+
+      class JamesBondCar extends Car {
+        constructor(name, speed, canFly) {
+          super(name, speed);
+          this.canFly = canFly;
+        }
+
+        accelerate() {
+          return super.accelerate() + " Can It Fly ?" + this.canFly;
+        }
+      }
+      var jbc = new JamesBondCar("Aston Martin", 200, true);
+      console.log(jbc.accelerate());
+    </script>
+  </head>
+  <body></body>
+</html>

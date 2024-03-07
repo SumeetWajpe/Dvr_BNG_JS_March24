@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   function Square(x) {
+      //     return x * x;
+      //   }
+
+      // OR
+      //   var Square = function (x) {
+      //     return x * x;
+      //   };
+      // OR (Arrow Function)
+      //   var Square = x => {
+      //     return x * x;
+      //   };
+      // OR
+      var Square = x => x * x;
+      console.log(Square(10));
+
+      var cars = ["BMW", "AUDI", "MERC"];
+
+      cars.forEach(function (car) {
+        console.log(car);
+      });
+
+      cars.forEach(car => console.log(car));
+
+      function Add(x, y) {
+        return x + y;
+      }
+      // OR
+      var Add = (x, y) => x + y;
+
+      function Test() {
+        console.log("Testing 1 2 3 !");
+      }
+      // OR
+      var Test = () => console.log("Testing 1 2 3 !");
+    </script>
+  </head>
+  <body></body>
+</html>

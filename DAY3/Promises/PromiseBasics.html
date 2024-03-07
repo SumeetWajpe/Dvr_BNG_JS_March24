@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      console.log("Started..");
+      let aPromise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("Success"), 2000);
+      });
+      aPromise.then(successmsg => console.log(successmsg));
+      console.log("Ended..");
+    </script>
+  </head>
+  <body></body>
+</html>

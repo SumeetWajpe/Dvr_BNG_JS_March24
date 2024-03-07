@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script>
+      async function LoadPosts() {
+        try {
+          // await can be used with any function that returns a promise
+          let res = await axios.get(
+            "https://jsonplaceholder.typicode.com/postsss",
+          );
+          console.log(res.data);
+        } catch (err) {
+          console.log(err.message);
+        }
+      }
+      LoadPosts();
+    </script>
+  </head>
+  <body></body>
+</html>

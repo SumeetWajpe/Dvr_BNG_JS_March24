@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="GetData.js"></script>
+    <script>
+      console.log("Started..");
+      let aPromise = GetData(); // returns a promise
+      aPromise.then(
+        postsJSON => {
+          let posts = JSON.parse(postsJSON);
+          let postsList = document.getElementById("postList");
+          for (let index = 0; index < posts.length; index++) {
+            let newLi = document.createElement("li");
+            newLi.setAttribute(
+              "style",
+              "border:1px solid black;margin:5px;padding:5px",
+            );
+            newLi.innerText = posts[index].title;
+            postsList.appendChild(newLi);
+          }
+        },
+        err => alert(err),
+      );
+      console.log("Ended");
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>All Posts</h1>
+    </header>
+    <main>
+      <ul id="postList"></ul>
+    </main>
+  </body>
+</html>
